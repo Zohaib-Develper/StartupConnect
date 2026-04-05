@@ -19,6 +19,9 @@ import EditProject from './pages/founder/EditProject';
 import InvestorDashboard from './pages/investor/Dashboard';
 import InvestPage from './pages/investor/InvestPage';
 
+// Admin
+import AdminDashboard from './pages/admin/Dashboard';
+
 function App() {
   return (
     <Router>
@@ -73,6 +76,16 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['investor']}>
                   <InvestPage />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Admin Routes */}
+            <Route
+              path="/admin/dashboard"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <AdminDashboard />
                 </ProtectedRoute>
               }
             />

@@ -32,15 +32,6 @@ npm run dev
 
 Open http://localhost:5173 in your browser.
 
-## Demo Credentials
-
-| Role     | Email              | Password    |
-|----------|--------------------|-------------|
-| Founder  | ali@startup.com    | password123 |
-| Founder  | zohaib@startup.com | password123 |
-| Investor | sara@invest.com    | password123 |
-| Investor | chand@invest.com   | password123 |
-
 ## Project Structure
 
 ```
@@ -72,8 +63,3 @@ frontend/src/
 ├── main.jsx
 └── index.css
 ```
-
-## Group Members
-
-- Zohaib Musharraf – 22L-7946
-- Chand Ali – 22L-6945
