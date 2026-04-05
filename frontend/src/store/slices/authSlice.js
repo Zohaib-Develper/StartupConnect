@@ -4,7 +4,7 @@ const mockUsers = [
   {
     id: '1',
     name: 'Ali Hassan',
-    email: 'ali@startup.com',
+    email: 'ali@gmail.com',
     password: 'password123',
     role: 'founder',
     avatar: null,
@@ -13,7 +13,7 @@ const mockUsers = [
   {
     id: '2',
     name: 'Sara Ahmed',
-    email: 'sara@invest.com',
+    email: 'sara@gmail.com',
     password: 'password123',
     role: 'investor',
     avatar: null,
@@ -22,7 +22,7 @@ const mockUsers = [
   {
     id: '3',
     name: 'Admin User',
-    email: 'admin@startupconnect.com',
+    email: 'admin@gmail.com',
     password: 'admin123',
     role: 'admin',
     avatar: null,
@@ -31,7 +31,7 @@ const mockUsers = [
   {
     id: '4',
     name: 'Zohaib Musharraf',
-    email: 'zohaib@startup.com',
+    email: 'zohaib@gmail.com',
     password: 'password123',
     role: 'founder',
     avatar: null,
@@ -40,7 +40,7 @@ const mockUsers = [
   {
     id: '5',
     name: 'Chand Ali',
-    email: 'chand@invest.com',
+    email: 'chand@gmail.com',
     password: 'password123',
     role: 'investor',
     avatar: null,

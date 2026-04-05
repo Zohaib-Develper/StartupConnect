@@ -155,10 +155,13 @@ function Login() {
               <i className="bi bi-info-circle me-1"></i>Demo Credentials
             </p>
             <p className="mb-1" style={{ color: 'var(--text-muted)' }}>
-              <strong>Founder:</strong> ali@startup.com / password123
+              <strong>Founder:</strong> zohaib@gmail.com / password123
             </p>
             <p className="mb-0" style={{ color: 'var(--text-muted)' }}>
-              <strong>Investor:</strong> sara@invest.com / password123
+              <strong>Investor:</strong> chand@gmail.com / password123
+            </p>
+            <p className="mb-0" style={{ color: 'var(--text-muted)' }}>
+              <strong>Admin:</strong> admin@gmail.com / admin123
             </p>
           </div>
         </div>
