@@ -24,7 +24,6 @@ function InvestorDashboard() {
       id="investor-dashboard"
     >
       <div className="container">
-        {/* Header */}
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 animate-fade-in-up">
           <div>
             <h1 style={{ fontWeight: 800, fontSize: "1.75rem" }}>
@@ -43,7 +42,6 @@ function InvestorDashboard() {
           </Link>
         </div>
 
-        {/* Stats Cards */}
         <div className="row g-4 mb-4">
           {[
             {
@@ -106,7 +104,6 @@ function InvestorDashboard() {
         </div>
 
         <div className="row g-4">
-          {/* Portfolio */}
           <div className="col-lg-8">
             <div className="glass-card p-4 animate-fade-in-up delay-3">
               <h5 style={{ fontWeight: 700, marginBottom: "1rem" }}>
@@ -238,7 +235,6 @@ function InvestorDashboard() {
             </div>
           </div>
 
-          {/* Investment History */}
           <div className="col-lg-4">
             <div className="glass-card p-4 animate-fade-in-up delay-4">
               <h5 style={{ fontWeight: 700, marginBottom: "1rem" }}>

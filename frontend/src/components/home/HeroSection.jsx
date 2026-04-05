@@ -13,7 +13,6 @@ function HeroSection({ projects, navigate }) {
         overflow: "hidden",
       }}
     >
-      {/* Floating orbs */}
       <div
         style={{
           position: "absolute",
