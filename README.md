@@ -31,35 +31,3 @@ npm run dev
 ```
 
 Open http://localhost:5173 in your browser.
-
-## Project Structure
-
-```
-frontend/src/
-├── components/
-│   ├── Navbar.jsx
-│   ├── Footer.jsx
-│   └── ProtectedRoute.jsx
-├── pages/
-│   ├── Home.jsx
-│   ├── Login.jsx
-│   ├── Register.jsx
-│   ├── Projects.jsx
-│   ├── ProjectDetail.jsx
-│   ├── founder/
-│   │   ├── Dashboard.jsx
-│   │   ├── CreateProject.jsx
-│   │   └── EditProject.jsx
-│   └── investor/
-│       ├── Dashboard.jsx
-│       └── InvestPage.jsx
-├── store/
-│   ├── store.js
-│   └── slices/
-│       ├── authSlice.js
-│       ├── projectSlice.js
-│       └── investmentSlice.js
-├── App.jsx
-├── main.jsx
-└── index.css
-```
