@@ -47,6 +47,25 @@ function InvestPage() {
     (project.fundingRaised / project.fundingGoal) * 100,
   );
 
+  const handleCardNumberChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    const formattedValue = value.replace(/(\d{4})(?=\d)/g, "$1 ");
+    setCardNumber(formattedValue);
+  };
+
+  const handleExpiryChange = (e) => {
+    let value = e.target.value.replace(/\D/g, "");
+    if (value.length >= 3) {
+      value = `${value.slice(0, 2)}/${value.slice(2, 4)}`;
+    }
+    setExpiry(value);
+  };
+
+  const handleCvcChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    setCvc(value.slice(0, 3));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setProcessing(true);
@@ -317,7 +336,7 @@ function InvestPage() {
                       id="card-number"
                       placeholder="4242 4242 4242 4242"
                       value={cardNumber}
-                      onChange={(e) => setCardNumber(e.target.value)}
+                      onChange={handleCardNumberChange}
                       required
                       maxLength="19"
                       style={{ paddingLeft: "42px" }}
@@ -336,7 +355,7 @@ function InvestPage() {
                       id="card-expiry"
                       placeholder="MM/YY"
                       value={expiry}
-                      onChange={(e) => setExpiry(e.target.value)}
+                      onChange={handleExpiryChange}
                       required
                       maxLength="5"
                     />
@@ -351,7 +370,7 @@ function InvestPage() {
                       id="card-cvc"
                       placeholder="123"
                       value={cvc}
-                      onChange={(e) => setCvc(e.target.value)}
+                      onChange={handleCvcChange}
                       required
                       maxLength="3"
                     />
