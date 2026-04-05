@@ -68,8 +68,8 @@ function FounderDashboard() {
               color: 'var(--success)',
             },
           ].map((stat, idx) => (
-            <div className="col-6 col-lg-3" key={idx}>
-              <div className="glass-card p-4 animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
+            <div className="col-12 col-sm-6 col-lg-3" key={idx}>
+              <div className="glass-card p-3 p-md-4 animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <div className="d-flex align-items-center gap-3">
                   <div
                     className="d-flex align-items-center justify-content-center"

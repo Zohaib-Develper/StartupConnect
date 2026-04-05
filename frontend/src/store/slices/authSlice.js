@@ -48,9 +48,11 @@ const mockUsers = [
   },
 ];
 
+const storedUser = localStorage.getItem('startup_connect_user');
+
 const initialState = {
-  user: null,
-  isAuthenticated: false,
+  user: storedUser ? JSON.parse(storedUser) : null,
+  isAuthenticated: !!storedUser,
   users: mockUsers,
   error: null,
   loading: false,
@@ -70,9 +72,11 @@ const authSlice = createSlice({
         (u) => u.email === email && u.password === password
       );
       if (user) {
-        state.user = { ...user, password: undefined };
+        const safeUser = { ...user, password: undefined };
+        state.user = safeUser;
         state.isAuthenticated = true;
         state.error = null;
+        localStorage.setItem('startup_connect_user', JSON.stringify(safeUser));
       } else {
         state.error = 'Invalid email or password';
       }
@@ -99,14 +103,17 @@ const authSlice = createSlice({
         joinedDate: new Date().toISOString().split('T')[0],
       };
       state.users.push(newUser);
-      state.user = { ...newUser, password: undefined };
+      const safeUser = { ...newUser, password: undefined };
+      state.user = safeUser;
       state.isAuthenticated = true;
       state.error = null;
+      localStorage.setItem('startup_connect_user', JSON.stringify(safeUser));
     },
     logout: (state) => {
       state.user = null;
       state.isAuthenticated = false;
       state.error = null;
+      localStorage.removeItem('startup_connect_user');
     },
     clearError: (state) => {
       state.error = null;

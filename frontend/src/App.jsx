@@ -1,26 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import ProtectedRoute from './components/ProtectedRoute';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 // Pages
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
 
 // Founder
-import FounderDashboard from './pages/founder/Dashboard';
-import CreateProject from './pages/founder/CreateProject';
-import EditProject from './pages/founder/EditProject';
+import FounderDashboard from "./pages/founder/Dashboard";
+import CreateProject from "./pages/founder/CreateProject";
+import EditProject from "./pages/founder/EditProject";
 
 // Investor
-import InvestorDashboard from './pages/investor/Dashboard';
-import InvestPage from './pages/investor/InvestPage';
+import InvestorDashboard from "./pages/investor/Dashboard";
+import InvestPage from "./pages/investor/InvestPage";
 
 // Admin
-import AdminDashboard from './pages/admin/Dashboard';
+import AdminDashboard from "./pages/admin/Dashboard";
 
 function App() {
   return (
@@ -29,18 +29,16 @@ function App() {
         <Navbar />
         <main className="flex-grow-1">
           <Routes>
-            {/* Public Routes */}
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
 
-            {/* Founder Routes */}
             <Route
               path="/founder/dashboard"
               element={
-                <ProtectedRoute allowedRoles={['founder']}>
+                <ProtectedRoute allowedRoles={["founder"]}>
                   <FounderDashboard />
                 </ProtectedRoute>
               }
@@ -48,7 +46,7 @@ function App() {
             <Route
               path="/founder/create"
               element={
-                <ProtectedRoute allowedRoles={['founder']}>
+                <ProtectedRoute allowedRoles={["founder"]}>
                   <CreateProject />
                 </ProtectedRoute>
               }
@@ -56,17 +54,16 @@ function App() {
             <Route
               path="/founder/edit/:id"
               element={
-                <ProtectedRoute allowedRoles={['founder']}>
+                <ProtectedRoute allowedRoles={["founder"]}>
                   <EditProject />
                 </ProtectedRoute>
               }
             />
 
-            {/* Investor Routes */}
             <Route
               path="/investor/dashboard"
               element={
-                <ProtectedRoute allowedRoles={['investor']}>
+                <ProtectedRoute allowedRoles={["investor"]}>
                   <InvestorDashboard />
                 </ProtectedRoute>
               }
@@ -74,17 +71,15 @@ function App() {
             <Route
               path="/investor/invest/:id"
               element={
-                <ProtectedRoute allowedRoles={['investor']}>
+                <ProtectedRoute allowedRoles={["investor"]}>
                   <InvestPage />
                 </ProtectedRoute>
               }
             />
-
-            {/* Admin Routes */}
             <Route
               path="/admin/dashboard"
               element={
-                <ProtectedRoute allowedRoles={['admin']}>
+                <ProtectedRoute allowedRoles={["admin"]}>
                   <AdminDashboard />
                 </ProtectedRoute>
               }

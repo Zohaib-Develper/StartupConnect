@@ -9,6 +9,7 @@ function Navbar() {
 
   const handleLogout = () => {
     dispatch(logout());
+    closeNavbar();
     navigate('/');
   };
 
@@ -26,10 +27,17 @@ function Navbar() {
     }
   };
 
+  const closeNavbar = () => {
+    const navbar = document.getElementById('navbarContent');
+    if (navbar && navbar.classList.contains('show')) {
+      navbar.classList.remove('show');
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark-custom fixed-top" id="main-navbar">
       <div className="container">
-        <Link className="navbar-brand d-flex align-items-center gap-2" to="/">
+        <Link className="navbar-brand d-flex align-items-center gap-2" to="/" onClick={closeNavbar}>
           <i className="bi bi-rocket-takeoff-fill"></i>
           Startup Connect
         </Link>
@@ -49,18 +57,18 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/" end>
+              <NavLink className="nav-link" to="/" end onClick={closeNavbar}>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/projects">
+              <NavLink className="nav-link" to="/projects" onClick={closeNavbar}>
                 Explore
               </NavLink>
             </li>
             {isAuthenticated && (
               <li className="nav-item">
-                <NavLink className="nav-link" to={getDashboardLink()}>
+                <NavLink className="nav-link" to={getDashboardLink()} onClick={closeNavbar}>
                   Dashboard
                 </NavLink>
               </li>
@@ -89,6 +97,7 @@ function Navbar() {
                     <Link
                       className="dropdown-item text-light"
                       to={getDashboardLink()}
+                      onClick={closeNavbar}
                       style={{ padding: '8px 16px' }}
                     >
                       <i className="bi bi-speedometer2 me-2"></i>Dashboard
@@ -109,10 +118,10 @@ function Navbar() {
               </div>
             ) : (
               <>
-                <Link to="/login" className="btn btn-outline-custom" id="login-nav-btn">
+                <Link to="/login" className="btn btn-outline-custom" id="login-nav-btn" onClick={closeNavbar}>
                   Sign In
                 </Link>
-                <Link to="/register" className="btn btn-primary-custom" id="register-nav-btn">
+                <Link to="/register" className="btn btn-primary-custom" id="register-nav-btn" onClick={closeNavbar}>
                   Get Started
                 </Link>
               </>
